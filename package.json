@@ -1,0 +1,31 @@
+{
+  "name": "webpack-typescript-babel-template",
+  "version": "0.1.0",
+  "description": "A starter template for projects using Webpack and Babel to build TypeScript code, and using TypeScript for type-checking.",
+  "main": "dist/bundle.js",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/nicksp/webpack-typescript-babel-template.git"
+  },
+  "author": "Nick S. Plekhanov <nick.plekhanov@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "typecheck:watch": "npm run typecheck -- --watch",
+    "build": "npm run build:types && npm run build:src",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:src": "webpack --mode=production"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-typescript": "^7.7.2",
+    "babel-loader": "^8.0.6",
+    "fork-ts-checker-webpack-plugin": "^3.1.0",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
